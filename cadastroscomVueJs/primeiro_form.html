@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+
+<style type="text/css">
+   label{
+    display: inline-block;
+    width: 180px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrapper grey darken-3">
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="left hide-on-med-and-down">
+      <li class="active"><a href="http://cariocadev.com.br/">CariocaDev</a></li>
+      <li><a href="https://github.com/JoicePaz">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/joicepaz/">Linkedin</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li class="active"><a href="http://cariocadev.com.br/">CariocaDev</a></li>
+      <li><a href="github.com/JoicePaz">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/joicepaz/">Linkedin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="row center"><h4>Formulário</h4></div>
+
+<div class="center">
+
+<div id="vue">
+  <div class="row">
+    <form class="col s12" name="formulario" id="formulario" method="post" action="" v-on:submit.prevent>
+
+      <div class="row">
+        <label for="email" data-error="wrong" data-success="right">Endereço de e-mail:</label>
+          <div class="input-field inline">
+            <input v-model="email" id="email" type="email" class="validate" required>
+          </div>
+      </div>
+
+      <div class="row">
+        <label for="nome">Nome:</label>
+          <div class="input-field inline">
+            <input v-model="nome" id="nome" type="text" class="validate" required>
+          </div>
+      </div>
+
+      <div class="row">
+        <label>Sexo:</label>
+          <div class="input-field inline">
+            <select id="sexo" v-model="sexo" class="browser-default">
+              <option value="" disabled selected></option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+      </div>
+     
+      <div class="row">
+        <label for="curso">Curso:</label>
+          <div class="input-field s9 inline">
+            <select name="curso" id="curso" v-model="curso" class="browser-default">
+              <option value="" disabled selected></option>
+              <option value="informatica">Curso Técnico em Informática</option>
+              <option value="alimentos">Curso Técnico em Alimentos</option>
+              <option value="agropecuaria">Curso Técnico em Agropecuária</option>
+            </select>
+          </div>
+      </div>  
+    
+      <div class="row">
+        <label for="endereco">Endereço para correspondência:</label>
+          <div class="input-field inline">
+            <input v-model="endereco" id="endereco" type="text" class="validate" name="endereco" required>
+          </div>
+      </div>
+          
+      <div class="row">
+        <label for="complemento">Complemento do endereço:</label>
+          <div class="input-field inline">
+            <input v-model="complemento" id="complemento" type="text" class="validate" name="complemento" required>
+          </div>
+      </div>  
+              
+      <div class="row">
+        <label for="cep">CEP:</label>
+          <div class="input-field inline">
+            <input v-model="cep" id="cep" type="text" class="validate" name="cep" required>
+          </div>
+      </div>    
+
+      <div class="row">
+        <label for="municipio">Município:</label>
+          <div class="input-field inline">
+            <input v-model="municipio" id="municipio" type="text" class="validate" name="municipio" required>
+          </div>
+
+          <div class="input-field s9 inline">
+            <select name="uf" id="uf" v-model="uf" class="browser-default">
+              <option value="AC">AC</option>
+              <option value="AL">AL</option>
+              <option value="AM">AM</option>
+              <option value="AP">AP</option>
+              <option value="BA">BA</option>
+              <option value="CE">CE</option>
+              <option value="DF">DF</option>
+              <option value="ES">ES</option>
+              <option value="GO">GO</option>
+              <option value="MA">MA</option>
+              <option value="MG">MG</option>
+              <option value="MS">MS</option>
+              <option value="MT">MT</option>
+              <option value="PA">PA</option>
+              <option value="PB">PB</option>
+              <option value="PE">PE</option>
+              <option value="PI">PI</option>
+              <option value="PR">PR</option>
+              <option value="RJ">RJ</option>
+              <option value="RN">RN</option>
+              <option value="RS" selected>RS</option>
+              <option value="RO">RO</option>
+              <option value="RR">RR</option>
+              <option value="SC">SC</option>
+              <option value="SE">SE</option>
+              <option value="SP">SP</option>
+              <option value="TO">TO</option>
+            </select>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field inline">
+            <button type="submit" class="waves-effect grey darken-4 btn" id="botao" @click="salvar">Salvar</button>
+        </div>
+
+        <div class="input-field inline">
+            <a class="waves-effect grey darken-4 btn" id="botao2" href="inscritos.html" @click="setar">Ver inscritos</a>
+        </div>
+
+        <div class="input-field inline">
+            <button type="reset" class="waves-effect grey darken-4 btn" id="botao3">Limpar</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+<!--fim div vueJS-->
+</div>
+
+
+<footer class="page-footer grey darken-4">
+
+  <div class="container">
+    
+    <div class="row">
+
+      <div class="col l6 s12">
+        <h5 class="white-text">Projeto Matrix</h5>
+        <p class="grey-text text-lighten-4">Exercício de javascript, html e css.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Siga-me</h5>
+        <ul>
+          <li><a href="https://twitter.com/juicemundo" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @juicemundo</a></li>
+          <li><a class="github-button" href="https://github.com/JoicePaz" data-size="large" aria-label="Follow @JoicePaz on GitHub">Seguir @JoicePaz</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-copyright grey darken-3"">
+    <div class="container">© 2017 Copyright - Joice Paz</div>
+  </div>
+
+</footer>
+
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script type="text/javascript" src="js/vue.js"></script>
+
+</body>
+</html>
