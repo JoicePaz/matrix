@@ -1,6 +1,10 @@
 var i = -1;
 var inscritos = [];
-var  obj = {
+
+
+new Vue({
+    el: "#vue",
+    data: {
         email: "",
         nome: "",
         sexo: "",
@@ -10,23 +14,27 @@ var  obj = {
         cep: "",
         municipio: "",
         uf: ""
-      };
-new Vue({
-    el: "#vue",
-    data: function(){
-     return obj;
-      
     },
     methods: {
       salvar: function(){
         i++;
-        inscritos[i] = obj;
-        alert(JSON.stringify(inscritos));
+        obj = {
+          email: this.email,
+          nome: this.nome,
+          sexo: this.sexo,
+          curso: this.curso,
+          endereco: this.endereco,
+          complemento: this.complemento,
+          cep: this.cep,
+          municipio: this.municipio,
+          uf: this.uf
+      };
+        inscritos[i] = obj;   
         
       },
       setar: function(){
         localStorage.setItem("inscritos", JSON.stringify(inscritos));
-      }
+      }     
 
     } 
 });

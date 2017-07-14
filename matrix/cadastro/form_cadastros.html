@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Cadastros</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style type="text/css">
+     label
+    {
+      display: inline-block;
+      width: 180px;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-wrapper grey darken-3">
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="left hide-on-med-and-down">
+      <li class="active"><a href="http://cariocadev.com.br/">CariocaDev</a></li>
+      <li><a href="https://github.com/JoicePaz">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/joicepaz/">Linkedin</a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li class="active"><a href="http://cariocadev.com.br/">CariocaDev</a></li>
+      <li><a href="github.com/JoicePaz">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/joicepaz/">Linkedin</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="row center"><h4>Formulário</h4></div>
+
+<div id="sec1" class="center">
+  <div class="row">
+
+    <form class="col s12" name="formulario" id="formulario" method="post" action="">
+
+      <div class="row">
+        <label for="email" data-error="wrong" data-success="right">Endereço de e-mail:</label>
+          <div class="input-field inline">
+            <input id="email" type="email" class="validate" name="email" required>
+          </div>
+      </div>
+
+      <div class="row">
+        <label for="nome">Nome:</label>
+          <div class="input-field inline">
+            <input id="nome" type="text" class="validate" name="nome" required>
+          </div>
+      </div>
+
+      <div class="row">
+        <label for="sexo">Sexo:</label>
+          <div class="input-field inline">
+            <select name="sexo" id="sexo">
+              <option value="" disabled selected></option>
+              <option value="masculino">Masculino</option>
+              <option value="feminino">Feminino</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+      </div>
+
+      <div class="row">
+        <label for="curso">Curso:</label>
+          <div class="input-field s9 inline" >
+            <select name="curso" id="curso">
+              <option value="" disabled selected></option>
+              <option value="informatica">Curso Técnico em Informática</option>
+              <option value="alimentos">Curso Técnico em Alimentos</option>
+              <option value="agropecuaria">Curso Técnico em Agropecuária.</option>
+            </select>
+          </div>
+      </div>
+              
+      <div class="row">
+        <label for="endereco">Endereço para correspondência:</label>
+          <div class="input-field inline">
+            <input id="endereco" type="text" class="validate" name="endereco" required>
+          </div>
+      </div>
+        
+      <div class="row">
+        <label for="complemento">Complemento do endereço:</label>
+          <div class="input-field inline">
+            <input id="complemento" type="text" class="validate" name="complemento" required>
+          </div>
+      </div>
+          
+      <div class="row">
+        <label for="cep">CEP:</label>
+          <div class="input-field inline">
+            <input id="cep" type="text" class="validate" name="cep" required>
+          </div>
+      </div>
+    
+      <div class="row">
+        <label for="municipio">Município:</label>
+          <div class="input-field inline">
+            <input id="municipio" type="text" class="validate" name="municipio" required>
+          </div>
+
+          <div class="input-field s9 inline">
+            <select name="uf" id="uf">
+              <option value="AC">AC</option>
+              <option value="AL">AL</option>
+              <option value="AM">AM</option>
+              <option value="AP">AP</option>
+              <option value="BA">BA</option>
+              <option value="CE">CE</option>
+              <option value="DF">DF</option>
+              <option value="ES">ES</option>
+              <option value="GO">GO</option>
+              <option value="MA">MA</option>
+              <option value="MG">MG</option>
+              <option value="MS">MS</option>
+              <option value="MT">MT</option>
+              <option value="PA">PA</option>
+              <option value="PB">PB</option>
+              <option value="PE">PE</option>
+              <option value="PI">PI</option>
+              <option value="PR">PR</option>
+              <option value="RJ">RJ</option>
+              <option value="RN">RN</option>
+              <option value="RS" selected>RS</option>
+              <option value="RO">RO</option>
+              <option value="RR">RR</option>
+              <option value="SC">SC</option>
+              <option value="SE">SE</option>
+              <option value="SP">SP</option>
+              <option value="TO">TO</option>
+            </select>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="input-field inline">
+          <button type="submit" class="waves-effect grey darken-4 btn" id="botao">Salvar</button>
+        </div>
+     
+        <div class="input-field inline">
+          <button type="button" name="ver todos" class="waves-effect grey darken-4 btn" id="botao2" onclick="location.href='cadastro.html'"">Ver Todos</button>
+        </div>
+      </div>
+     
+    </form>
+  </div>
+</div>
+
+<div class="container center">
+
+  <div id="mensagens" class="row"></div>
+  
+  <div class="row">
+    <div class="input-field inline" id="btns">
+      <a class="waves-effect grey darken-3 btn" href="#modal1">Sim</a>
+      <a class="waves-effect grey darken-3 btn" href="#modal2">Não</a>
+    </div>
+  </div>
+
+  <!--modais-->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Inscrição Confirmada!</h4>
+      <p>Prezado(a) <span id="pessoa"></span>, sua inscrição foi confirmada! Em breve receberá mais informações no e-mail: <span id="emailp"></span>.</p>
+    </div>
+    <div class="modal-footer">
+      <a href="form_cadastros.html" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+    </div>
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>Inscrição Cancelada!</h4>
+      <p>Prezado(a) <span id="pessoa2"></span>, sua inscrição foi cancelada!</p>
+    </div>
+    <div class="modal-footer">
+      <a href="form_cadastros.html" class="modal-action modal-close waves-effect waves-green btn-flat">SAIR</a>
+    </div>
+  </div>
+
+</div>         
+
+<footer class="page-footer grey darken-4">
+
+  <div class="container">
+    
+    <div class="row">
+
+      <div class="col l6 s12">
+        <h5 class="white-text">Projeto Matrix</h5>
+        <p class="grey-text text-lighten-4">Exercício de javascript, html e css.</p>
+      </div>
+      <div class="col l4 offset-l2 s12">
+        <h5 class="white-text">Siga-me</h5>
+        <ul>
+          <li><a href="https://twitter.com/juicemundo" class="twitter-follow-button" data-show-count="false" data-size="large">Follow @juicemundo</a></li>
+          <li><a class="github-button" href="https://github.com/JoicePaz" data-size="large" aria-label="Follow @JoicePaz on GitHub">Seguir @JoicePaz</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-copyright grey darken-3"">
+    <div class="container">© 2017 Copyright - Joice Paz</div>
+  </div>
+
+</footer>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="js/confirmacao.js"></script>
+<script type="text/javascript" src="js/modal.js"></script>
+<script type="text/javascript" src="js/salvar.js"></script>
+
+</body>
+</html>

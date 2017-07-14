@@ -9,7 +9,6 @@ var obj = {
   municipio: "",
   uf: ""
 }
-
 new Vue({
     el: "#vue",
     data: function(){
