@@ -1,7 +1,6 @@
 var i = -1;
 var inscritos = [];
 
-
 new Vue({
     el: "#vue",
     data: {
